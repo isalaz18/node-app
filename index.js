@@ -2,6 +2,7 @@ import express from "express"
 import mongoose from "mongoose"
 import bodyParser from "body-parser"
 import dotenv from "dotenv"
+import route from "./routes/employeeRoute.js"
 
 const app = express()
 app.use(bodyParser.json())
@@ -19,5 +20,6 @@ app.listen(PORT, ()=> {
     })
 
 }).catch( error => console.log(error))
+app.use("/api/employees", route)
 
 
